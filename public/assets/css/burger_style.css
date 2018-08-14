@@ -1,0 +1,123 @@
+#top, #bottom, #left, #right {
+    background: #ba5656;
+    position: fixed;
+    /* border-l: black solid; */
+}
+
+#left, #right {
+    top:0;
+    bottom:0;
+    width:3%;
+}
+
+#left{
+    left:0;
+}
+
+#right{
+    right:50%;
+}
+
+#top, #bottom{
+    left: 0;
+    right: 50%;
+    height: 6%;
+
+}
+
+#top{
+    top: 0;
+}
+
+#bottom{
+    bottom: 0;
+}
+
+body{
+    background-color: #fcf5b3;
+}
+
+.words{
+   position: fixed;
+   top: 0; 
+   right: 50%;
+   left: 0;
+   bottom: 0;
+   color: white;
+   z-index: 2;
+   text-transform: uppercase;
+}
+
+
+#BURGER{
+    font-family: 'Londrina Outline', cursive;
+    /* font-family: 'Londrina Shadow', cursive; */
+    font-size: 5em;
+    margin-top: 20%;
+    line-height: 0;
+    letter-spacing: .05em;
+}
+
+#ofTheDay{
+    letter-spacing: .02em;
+    word-spacing: .2em;
+    line-height: .2;
+    font-size: 2.1em;
+    font-style: italic;
+    /* font-family: 'Gloria Hallelujah', cursive; */
+    /* font-family: 'Architects Daughter', cursive; */
+    font-family: 'Coming Soon', cursive;
+    /* font-family: 'Annie Use Your Telescope', cursive; */
+
+}
+
+.availableBurger{
+    font-family: 'Indie Flower', cursive;
+    font-family: 'Shadows Into Light', cursive;
+    font-family: 'Atma', cursive;
+    font-family: 'Gaegu', cursive;
+    font-family: 'Nanum Pen Script', cursive;
+    font-family: 'Patrick Hand', cursive;
+    font-family: 'Kalam', cursive;
+    font-family: 'Caveat', cursive;
+
+}
+
+#burgOTD{
+    font-family: 'Caveat', cursive;
+
+}
+
+#price{
+    font-family: 'Caveat', cursive;
+
+}
+
+#eatBurger{
+    font-family: 'Caveat', cursive;
+
+}
+
+.chalk{
+    font-display: center;
+    text-align: center;
+}
+
+.frame{
+    background-color: #808391;
+    position: fixed;
+    bottom: 0;
+    top: 0;
+    left:0;
+    right: 50%;
+    z-index: 1;
+
+}
+
+.rightSide{
+    /* float: right; */
+    position: fixed;
+    left: 65%;
+}
+/* 
+*/

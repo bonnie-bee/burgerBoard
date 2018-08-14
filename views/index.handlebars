@@ -1,0 +1,107 @@
+<div class="frame"></div>
+
+<div class="words">
+    <h1 class = "chalk" id="BURGER">BURGER</h1>
+    <h2 class = "chalk" id="ofTheDay"> OF THE DAY</h2>
+
+        <div id="left"></div>
+        <div id="right"></div>
+        <div id="top"></div>
+        <div id="bottom"></div>
+    
+
+    <h2 class="availableBurger chalk">Available burgers:</h2>
+
+    {{!-- creates an unordered list based off the data grabbed in the all function of burgers_controller --}}
+    <div class = "chalk" id="burgOTD">
+        {{!-- runs through each burger in the table --}}
+        {{#each burgers}} 
+            {{!-- posts the ones that haven't been eaten yet --}}
+            {{#unless devoured}}
+                <p>
+                    {{!-- prints the name and makes a button so you can eat the burger --}} 
+                    {{burger_name}}
+                    <br>
+                    <button class="burgerBtn" data-id="{{id}}" data-eaten={{made}}>
+                        EAT ME
+                    </button>
+                <p>
+            {{/unless}} 
+        {{/each}}
+    </div>
+
+    <h3 class = "chalk" id="price">$5.95</h3>
+</div>
+
+<div class="rightSide">
+    <h2 class="availableBurger chalk ">Burgers we made:</h2>
+    {{!-- same as previous list but with burgers that have been eaten and no button--}}
+    <div class = "chalk" id="eatBurger">
+        {{#each burgers}} 
+            {{#if devoured}}
+                <p>
+                    {{burger_name}}
+                <p>
+            {{/if}}
+        {{/each}}
+    </div>
+
+    <h2 class="submitBurg chalk ">Make your own burger</h2>
+    <form class = "chalk">
+        <label for="burgerName">Burger Name:</label>
+        <input type="text" id="burgerName" name="name">
+        <button type="submit" id="makeBtn">Make burger</button>
+    </form>
+</div>
+
+
+
+<button klsgjfdls;>
+    I'm a button
+</button>
+
+
+
+
+<script>
+
+//$(function(){
+$(".burgerBtn").on('click', function(event){
+    const id = $(this).data("id");
+    const eaten = $(this).data("eaten");
+    const isMade = {
+        made: eaten
+    };
+    console.log("I made this!")
+    $.ajax(`/api/burgers/${id}`, {
+        type: "PUT",
+        data: isMade
+    }).then(
+        function() {
+            console.log("I MADE A BURGER");
+            location.reload()
+        }
+    );
+});
+
+$("#makeBtn").on('click', function(event){
+    event.preventDefault;
+
+    let newBurger = {
+        name: $("#burgerName").val().trim(),
+        made: 0
+    };
+
+    $.ajax('/api/burgers', {
+        type: "POST",
+        data: newBurger,
+    }).then(
+        function(){
+            console.log("I'M A NEW BURGER");
+            location.reload();
+        }
+    );
+});
+//});
+
+</script>
