@@ -1,0 +1,18 @@
+  <h2 class="availableBurger chalk ">Burgers we made:</h2>
+    {{!-- same as previous list but with burgers that have been eaten and no button--}}
+    <div class = "chalk" id="eatBurger">
+        {{#each bobsburgers}} 
+            {{#if made}}
+                <p>
+                    {{burger_name}}
+                <p>
+            {{/if}}
+        {{/each}}
+    </div>
+
+    {{!-- <h2 class="submitBurg chalk ">Make your own burger</h2> --}}
+    {{!-- <form class = "chalk">
+        <label for="burgerName">Burger Name:</label>
+        <input type="text" id="burgerName" name="name">
+        <button type="submit" id="makeBtn">Make burger</button>
+    </form> --}}

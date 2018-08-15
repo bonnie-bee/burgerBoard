@@ -15,17 +15,21 @@
     {{!-- creates an unordered list based off the data grabbed in the all function of burgers_controller --}}
     <div class = "chalk" id="burgOTD">
         {{!-- runs through each burger in the table --}}
-        {{#each burgers}} 
+        {{#each bobsburgers}} 
             {{!-- posts the ones that haven't been eaten yet --}}
-            {{#unless devoured}}
-                <p>
+            {{#unless made}}
+                <p id="burgerName">
                     {{!-- prints the name and makes a button so you can eat the burger --}} 
                     {{burger_name}}
-                    <br>
+                    </p>
+                    {{!-- <br> --}}
+                    <p id="pgNum">
+                    Pg. {{page_number}}
+                    </p>
+                    {{!-- <br> --}}
                     <button class="burgerBtn" data-id="{{id}}" data-eaten={{made}}>
                         EAT ME
                     </button>
-                <p>
             {{/unless}} 
         {{/each}}
     </div>
@@ -34,24 +38,7 @@
 </div>
 
 <div class="rightSide">
-    <h2 class="availableBurger chalk ">Burgers we made:</h2>
-    {{!-- same as previous list but with burgers that have been eaten and no button--}}
-    <div class = "chalk" id="eatBurger">
-        {{#each burgers}} 
-            {{#if devoured}}
-                <p>
-                    {{burger_name}}
-                <p>
-            {{/if}}
-        {{/each}}
-    </div>
-
-    <h2 class="submitBurg chalk ">Make your own burger</h2>
-    <form class = "chalk">
-        <label for="burgerName">Burger Name:</label>
-        <input type="text" id="burgerName" name="name">
-        <button type="submit" id="makeBtn">Make burger</button>
-    </form>
+  {{> madeBurgers/made-block}}
 </div>
 
 
@@ -73,13 +60,14 @@ $(".burgerBtn").on('click', function(event){
         made: eaten
     };
     console.log("I made this!")
+    console.log(id, isMade)
     $.ajax(`/api/burgers/${id}`, {
         type: "PUT",
         data: isMade
     }).then(
         function() {
             console.log("I MADE A BURGER");
-            location.reload()
+            //location.reload()
         }
     );
 });

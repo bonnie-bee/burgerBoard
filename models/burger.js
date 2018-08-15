@@ -12,6 +12,10 @@ module.exports=function (sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: true,
         },
+        veggie: {
+            type: DataTypes.BOOLEAN,
+            allowNull: true,
+        },
         made: {
             type: DataTypes.BOOLEAN,
             allowNull: false,
