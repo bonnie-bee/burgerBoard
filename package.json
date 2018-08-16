@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bonnie-bee/burger.git"
+    "url": "git+https://github.com/bonnie-bee/burgerBoard.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/bonnie-bee/burger/issues"
+    "url": "https://github.com/bonnie-bee/burgerBoard/issues"
   },
-  "homepage": "https://github.com/bonnie-bee/burger#readme",
+  "homepage": "https://github.com/bonnie-bee/burgerBoard#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
